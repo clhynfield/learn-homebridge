@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+homebridge_home="/tmp/homebridge"
+
+if [[ "$#" -eq 0 ]]; then
+    docker run \
+      --net='host' \
+      --name='homebridge' --rm \
+      --volume "$homebridge_home:/homebridge" \
+      --env "PUID=$UID" --env "PGID=$GID" \
+      --detach \
+      'oznu/homebridge:debian'
+else
+    docker exec \
+      'homebridge' \
+      "$@"
+fi

@@ -1,2 +1,4 @@
 .envrc
 *.swp
+.zsh_history
+/.gtm/

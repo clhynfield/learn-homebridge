@@ -1,0 +1,43 @@
+{
+    "bridge": {
+        "name": "Homebridge",
+        "username": "RE:DA:CT:ED",
+        "port": 51826,
+        "pin": "430-41-704"
+    },
+
+    "description": "This is an example configuration file. You can use this as a template for creating your own configuration file containing devices you actually own.",
+
+    "accessories": [
+      {
+        "accessory": "DummySwitch",
+        "name": "Dummy Switch 1"
+      },
+      {
+        "accessory": "webostv",
+        "name": "Family Room TV",
+        "ip": "192.168.1.162",
+        "mac": "84:8d:63:63:d0:fc",
+        "keyFile": "/homebridge/lgtvKeyFile",
+        "inputs": [
+          {
+            "appId": "com.webos.app.hdmi1",
+            "name": "Apple TV"
+          },
+          {
+            "appId": "com.webos.app.hdmi2",
+            "name": "Wii U"
+          }
+        ],
+        "volumeControl": false,
+        "channelControl": false
+      }
+    ],
+
+    "platforms": [
+      {
+        "platform": "Ring",
+        "refreshToken": "REDACTED"
+      }
+    ]
+}
